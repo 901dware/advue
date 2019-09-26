@@ -5,13 +5,21 @@
     </head>
     <body>
         <div id="app" style="text-align: center">
-            <h1>{{ message }}</h1>
+            <h1>First Name: {{ firstname }}</h1>
+            <h1>Last Name: {{ lastname }}</h1>
+            <h1>{{ getDetails() }}</h1>
         </div>
         <script type="text/javascript">
             var vue_inst = new Vue({
                 el: "#app",
                 data: {
-                    message: "Hello World!"
+                    firstname: "Gold",
+                    lastname: "Developer",
+                },
+                methods: {
+                    getDetails: function() {
+                        return "My name is " + this.firstname + this.lastname;
+                    }
                 }
             })
         </script>
